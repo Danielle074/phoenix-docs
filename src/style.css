@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+/* Palette issue du logo : orange phénix + bleu nuit */
+:root {
+  --background: #fbf8f4;
+  --foreground: #1b2a4a;
+  --card: #ffffff;
+  --card-foreground: #1b2a4a;
+  --primary: #e8730c;
+  --primary-foreground: #ffffff;
+  --secondary: #1b2a4a;
+  --secondary-foreground: #ffffff;
+  --muted: #f1ece5;
+  --muted-foreground: #5b6580;
+  --accent: #fde8d2;
+  --border: #e4dccf;
+  --ring: #e8730c;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body { @apply bg-background text-foreground font-sans antialiased; }
+h1, h2, h3 { @apply font-display tracking-tight; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  header, aside, .no-print { display: none !important; }
+  section { break-inside: avoid-page; }
+  body { background: #fff; }
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
