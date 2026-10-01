@@ -34,3 +34,16 @@ defineProps<{ meta: DocMeta }>()
     </div>
   </section>
 </template>
+
+<style scoped>
+
+:deep(.overflow-auto) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+:deep(.overflow-auto)::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+</style>
